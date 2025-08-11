@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4F46E5">
+    <title>Finance Tracker</title>
+    
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.svg">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Finance Tracker">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="icons/icon-32x32.svg">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="app-title">
+                    <i class="fas fa-wallet"></i>
+                    Finance Tracker
+                </h1>
+                <div class="header-controls">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="nav-btn" id="viewToggle">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Overview</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Balance Summary -->
+        <section class="balance-section">
+            <div class="balance-card">
+                <h2>Total Balance</h2>
+                <div class="balance-amount" id="totalBalance">₹0.00</div>
+            </div>
+            <div class="balance-grid">
+                <div class="balance-item income">
+                    <div class="balance-icon">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                    <div class="balance-info">
+                        <span class="balance-label">Income</span>
+                        <span class="balance-value" id="totalIncome">₹0.00</span>
+                    </div>
+                </div>
+                <div class="balance-item expense">
+                    <div class="balance-icon">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                    <div class="balance-info">
+                        <span class="balance-label">Expense</span>
+                        <span class="balance-value" id="totalExpense">₹0.00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Add Transaction Section -->
+            <section class="add-transaction" id="addTransactionSection">
+                <div class="section-header">
+                    <h3>Add Transaction</h3>
+                </div>
+                <form class="transaction-form" id="transactionForm">
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" id="description" placeholder="Enter description" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="amount">Amount (₹)</label>
+                            <input type="number" id="amount" placeholder="0.00" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Category</label>
+                            <select id="category" required>
+                                <option value="">Select Category</option>
+                                <option value="Food">🍔 Food</option>
+                                <option value="Transport">🚗 Transport</option>
+                                <option value="Entertainment">🎬 Entertainment</option>
+                                <option value="Shopping">🛒 Shopping</option>
+                                <option value="Bills">💡 Bills</option>
+                                <option value="Healthcare">🏥 Healthcare</option>
+                                <option value="Education">📚 Education</option>
+                                <option value="Salary">💰 Salary</option>
+                                <option value="Business">💼 Business</option>
+                                <option value="Investment">📈 Investment</option>
+                                <option value="Gift">🎁 Gift</option>
+                                <option value="Other">📝 Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="transaction-type">
+                        <label class="radio-label">
+                            <input type="radio" name="type" value="income" required>
+                            <span class="radio-custom income-radio">
+                                <i class="fas fa-plus"></i>
+                                Income
+                            </span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="type" value="expense" required>
+                            <span class="radio-custom expense-radio">
+                                <i class="fas fa-minus"></i>
+                                Expense
+                            </span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-plus"></i>
+                        Add Transaction
+                    </button>
+                </form>
+            </section>
+
+            <!-- Transactions Overview -->
+            <section class="transactions-overview" id="transactionsOverview">
+                <div class="section-header">
+                    <h3>Transaction History</h3>
+                    <div class="filter-controls">
+                        <select id="filterCategory" class="filter-select">
+                            <option value="all">All Categories</option>
+                            <option value="Food">🍔 Food</option>
+                            <option value="Transport">🚗 Transport</option>
+                            <option value="Entertainment">🎬 Entertainment</option>
+                            <option value="Shopping">🛒 Shopping</option>
+                            <option value="Bills">💡 Bills</option>
+                            <option value="Healthcare">🏥 Healthcare</option>
+                            <option value="Education">📚 Education</option>
+                            <option value="Salary">💰 Salary</option>
+                            <option value="Business">💼 Business</option>
+                            <option value="Investment">📈 Investment</option>
+                            <option value="Gift">🎁 Gift</option>
+                            <option value="Other">📝 Other</option>
+                        </select>
+                        <select id="filterType" class="filter-select">
+                            <option value="all">All Types</option>
+                            <option value="income">Income</option>
+                            <option value="expense">Expense</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="transactions-list" id="transactionsList">
+                    <div class="no-transactions">
+                        <i class="fas fa-receipt"></i>
+                        <p>No transactions yet</p>
+                        <span>Add your first transaction to get started</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Transaction added successfully!</span>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal-overlay" id="deleteModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Delete Transaction</h3>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this transaction?</p>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-secondary" id="cancelDelete">Cancel</button>
+                <button class="btn-danger" id="confirmDelete">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

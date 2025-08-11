@@ -1,0 +1,70 @@
+{
+  "name": "Finance Tracker",
+  "short_name": "FinanceTracker",
+  "description": "A modern finance tracker to manage your income and expenses with beautiful UI and local storage",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#4F46E5",
+  "theme_color": "#4F46E5",
+  "orientation": "portrait-primary",
+  "categories": ["finance", "productivity", "business"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icons/icon-192x192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "maskable any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/mobile1.png",
+      "sizes": "320x568",
+      "type": "image/png"
+    },
+    {
+      "src": "screenshots/desktop1.png",
+      "sizes": "1280x720",
+      "type": "image/png"
+    }
+  ],
+  "features": [
+    "Cross Platform",
+    "fast",
+    "simple"
+  ],
+  "shortcuts": [
+    {
+      "name": "Add Transaction",
+      "short_name": "Add",
+      "description": "Add a new transaction",
+      "url": "/?action=add",
+      "icons": [
+        {
+          "src": "icons/icon-192x192.svg",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "View Transactions",
+      "short_name": "View",
+      "description": "View all transactions",
+      "url": "/?action=view",
+      "icons": [
+        {
+          "src": "icons/icon-192x192.svg",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
