@@ -1,10 +1,10 @@
 const CACHE_NAME = 'finance-tracker-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  '/script.js',
-  '/manifest.json',
+  '/finance-tracker/',
+  '/finance-tracker/index.html',
+  '/finance-tracker/styles.css',
+  '/finance-tracker/script.js',
+  '/finance-tracker/manifest.json',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
 ];
 

@@ -2,7 +2,7 @@
   "name": "Finance Tracker",
   "short_name": "FinanceTracker",
   "description": "A modern finance tracker to manage your income and expenses with beautiful UI and local storage",
-  "start_url": "/",
+  "start_url": "/finance-tracker/",
   "display": "standalone",
   "background_color": "#4F46E5",
   "theme_color": "#4F46E5",
@@ -46,7 +46,7 @@
       "name": "Add Transaction",
       "short_name": "Add",
       "description": "Add a new transaction",
-      "url": "/?action=add",
+      "url": "/finance-tracker/?action=add",
       "icons": [
         {
           "src": "icons/icon-192x192.svg",
@@ -58,7 +58,7 @@
       "name": "View Transactions",
       "short_name": "View",
       "description": "View all transactions",
-      "url": "/?action=view",
+      "url": "/finance-tracker/?action=view",
       "icons": [
         {
           "src": "icons/icon-192x192.svg",
