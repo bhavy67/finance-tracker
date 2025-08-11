@@ -1,8 +1,9 @@
 {
-  "name": "Finance Tracker",
-  "short_name": "FinanceTracker",
-  "description": "A modern finance tracker to manage your income and expenses with beautiful UI and local storage",
+  "name": "Finance Tracker App",
+  "short_name": "Finance Tracker",
+  "description": "Personal finance tracker - manage income and expenses with beautiful UI",
   "start_url": "/finance-tracker/",
+  "scope": "/finance-tracker/",
   "display": "standalone",
   "background_color": "#4F46E5",
   "theme_color": "#4F46E5",
@@ -22,6 +23,12 @@
       "sizes": "192x192",
       "type": "image/svg+xml",
       "purpose": "maskable any"
+    },
+    {
+      "src": "icons/icon-32x32.svg",
+      "sizes": "32x32",
+      "type": "image/svg+xml",
+      "purpose": "any"
     }
   ],
   "screenshots": [
