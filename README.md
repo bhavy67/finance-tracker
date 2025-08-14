@@ -2,8 +2,6 @@
 
 A modern, responsive finance tracker application built with vanilla HTML, CSS, and JavaScript. Track your income and expenses with a beautiful, user-friendly interface that works perfectly on all devices.
 
-![Finance Tracker Demo](https://via.placeholder.com/800x400/4F46E5/FFFFFF?text=Finance+Tracker+Demo)
-
 ## 🚀 Live Demo
 
 [**Try the Finance Tracker**](https://bhavy67.github.io/finance-tracker)
